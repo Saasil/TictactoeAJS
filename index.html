@@ -1,0 +1,73 @@
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+<script type="text/javascript" src="app.js"></script>
+<head>
+<title></title>
+</head>
+<body ng-app="tictac">
+
+<style>
+
+.col1 {
+
+    float: left;
+    width: 75px;
+
+}
+.col2 {
+
+    float: left;
+    width: 75px;
+
+
+}
+.col3 {
+
+    float: left;
+    width: 75px;
+
+}
+
+.celda {
+border: solid black;
+width:50px;
+height: 50px;
+
+}
+
+#four, #seven, #five, #eight, #six, #nine
+{
+margin-top: 15px;
+}
+
+
+</style>
+<div ng-controller="ChangeValue as change">
+
+  <div class="col1">
+    <div class="celda" id ="one" ng-click="change.exchange()">{{change.boton1}}</div>
+    <div class="celda" id ="four" ng-click="change.exchange()" >{{change.boton2}}</div>
+    <div class="celda" id ="seven" ng-click="boton3=count ; count=='X' ? count='O' : count='X'" ng-init="count='X'">{{boton3}}</div>
+  </div>
+
+
+<div class="col2"><!aca estaba testeando, lo de arriba no importa>
+    <div class="celda" id = "two" value = "" ng-click="doStuff($event); change.exchange()">{{value}}</div>
+    <div class="celda" id = "five" ng-click="doStuff($event); change.exchange()">{{value}}</div>
+    <div class="celda" id = "eight"></div>
+
+</div>
+
+  <div class="col3">
+    <div class="celda" id="three"></div>
+    <div class="celda" id="six"></div>
+    <div class="celda" id ="nine"></div>
+  </div>
+</div>
+
+
+<script>
+
+</script>
+</body>
+</html>
