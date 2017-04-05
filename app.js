@@ -26,52 +26,37 @@ app.directive('buttonCalls', function(){
           $scope.player == 'X' ? $scope.player = 'O' : $scope.player = 'X';
         };
 
-        $scope.verify = function() {
-          var bt1 = $scope.boton[1];
-          var bt2 = $scope.boton[2];
-          var bt3 = $scope.boton[3];
-          var bt4 = $scope.boton[4];
-          var bt5 = $scope.boton[5];
-          var bt6 = $scope.boton[6];
-          var bt7 = $scope.boton[7];
-          var bt8 = $scope.boton[8];
-          var bt9 = $scope.boton[9];
+        $scope.gano = function(quien) {
+          alert("Gano " + quien);
+        }
 
-        //////////////////////Player "X"//////////////////////
-          if(bt1 == "X" && bt2 == "X" && bt3=="X")
-            alert("Gano X");
-          if( bt4 == "X" && bt5 == "X" && bt6 == "X")
-            alert("Gano X");
-          if( bt7 == "X" && bt8 == "X" && bt9 == "X")
-            alert("Gano X");
-          if( bt1 == "X" && bt5 == "X" && bt9 == "X")
-            alert("Gano X");
-          if( bt3 == "X" && bt5 == "X" && bt7 == "X")
-            alert("Gano X");
-          if( bt1 == "X" && bt4 == "X" && bt7 == "X")
-            alert("Gano X");
-          if( bt2 == "X" && bt5 == "X" && bt8 == "X")
-            alert("Gano X");
-          if( bt3 == "X" && bt6 == "X" && bt9 == "X")
-            alert("Gano X");
-            //////////////////////PLAYER "O"//////////////////////
-          if( bt1 == "O" && bt2 == "O" && bt3 == "O")
-            alert("Gano O");
-          if( bt4 == "O" && bt5 == "O" && bt6 == "O")
-            alert("Gano O");
-          if( bt7 == "O" && bt8 == "O" && bt9 == "O")
-            alert("Gano O");
-          if( bt1 == "O" && bt5 == "O" && bt9 == "O")
-              alert("Gano O");
-          if( bt3 == "O" && bt5 == "O" && bt7 == "O")
-            alert("Gano O");
-          if( bt1 == "O" && bt4 == "O" && bt7 == "O")
-            alert("Gano O");
-          if( bt2 == "O" && bt5 == "O" && bt8 == "O")
-            alert("Gano O");
-          if( bt3 == "O" && bt6 == "O" && bt9 == "O")
-            alert("Gano O");
-        };
+        $scope.verify = function() {
+          var soluciones = [
+            [1,2,3], [4,5,6], [7,8,9],
+            [1,5,9], [3,5,7], [1,4,7],
+            [2,5,8], [3,6,9],
+          ];
+
+          /*
+          soluciones.forEach(function(solucion) {
+            if ($scope.boton[ solucion[0] ] === $scope.boton[ solucion[1] ] &&
+                $scope.boton[ solucion[0] ] === $scope.boton[ solucion[2] ] &&
+                $scope.boton[ solucion[0] ] !== undefined) {
+                $scope.gano( $scope.boton[solucion[0]] );
+            }
+          });
+          */
+
+          for (i=0; i<soluciones.length; i++) {
+            var solucion = soluciones[i];
+            if ($scope.boton[ solucion[0] ] === $scope.boton[ solucion[1] ] &&
+                $scope.boton[ solucion[0] ] === $scope.boton[ solucion[2] ] &&
+                $scope.boton[ solucion[0] ] !== undefined) {
+                $scope.gano( $scope.boton[solucion[0]] );
+            }
+          }
+
+        }
       },
       controllerAs: 'change'
     };

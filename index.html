@@ -4,25 +4,28 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
     <style>
-      .col1 {
+      .col1, .col2, .col3 {
         float: left;
         width: 75px;
       }
-      .col2 {
-        float: left;
-        width: 75px;
+      .estiloX {
+        color: red;
       }
-      .col3 {
-        float: left;
-        width: 75px;
+      .estiloO {
+        color: blue;
       }
       .celda {
+        display: table;
         border: solid black;
         width:50px;
         height: 50px;
+        margin: 15px;
       }
-      #two, #three, #five, #six, #eight, #nine {
-        margin-top: 15px;
+      p {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        font-size:40px;
       }
     </style>
   </head>
