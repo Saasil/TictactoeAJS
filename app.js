@@ -12,12 +12,15 @@ app.directive('buttonCalls', function(){
         $scope.player = "X";
         $scope.boton = [];
         $scope.notchange = [1,2,3,4,5,6,7,8,9];
+        $scope.solounganador = false;
 
         $scope.hacerTodo = function(sorete) {
           $scope.doStuff(sorete);
-          if($scope.notchange[$scope.value] != false) {
+          if($scope.notchange[$scope.value] != false){
             $scope.exchange();
-            $scope.verify();
+              if($scope.solounganador == false){
+                $scope.verify();
+                }
             }
         }
 
@@ -59,6 +62,7 @@ app.directive('buttonCalls', function(){
                 $scope.boton[ solucion[0] ] === $scope.boton[ solucion[2] ] &&
                 $scope.boton[ solucion[0] ] !== undefined) {
                 $scope.gano( $scope.boton[solucion[0]] );
+                $scope.solounganador = true;
             }
           }
 
