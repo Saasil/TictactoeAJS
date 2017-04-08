@@ -14,9 +14,12 @@ app.directive('buttonCalls', function(){
         $scope.notchange = [1,2,3,4,5,6,7,8,9];
         $scope.solounganador = false;
         $scope.resultado = true;
+        $scope.sum = 0;
 
         $scope.hacerTodo = function(sorete) {
+
           $scope.doStuff(sorete);
+
           if($scope.notchange[$scope.value] != false){
             $scope.exchange();
               if($scope.solounganador == false){
@@ -47,42 +50,54 @@ app.directive('buttonCalls', function(){
             [2,5,8], [3,6,9],
           ];
 
-          /*
-          soluciones.forEach(function(solucion) {
-            if ($scope.boton[ solucion[0] ] === $scope.boton[ solucion[1] ] &&
-                $scope.boton[ solucion[0] ] === $scope.boton[ solucion[2] ] &&
-                $scope.boton[ solucion[0] ] !== undefined) {
-                $scope.gano( $scope.boton[solucion[0]] );
+       for (i=0; i<soluciones.length; i++) {
+
+         $scope.sum++;
+
+         var solucion = soluciones[i];
+
+         if ($scope.boton[ solucion[0] ] === $scope.boton[ solucion[1] ] &&
+             $scope.boton[ solucion[0] ] === $scope.boton[ solucion[2] ] &&
+             $scope.boton[ solucion[0] ] !== undefined) {
+             $scope.gano( $scope.boton[solucion[0]] );
+             $scope.solounganador = true;
             }
-          });
-          */
-
-          // $scope.filter = $scope.notchange.slice(0,3);
-
-            if($scope.boton[1] !== undefined
-            && $scope.boton[2] !== undefined
-            && $scope.boton[3] !== undefined
-            && $scope.boton[4] !== undefined
-            && $scope.boton[5] !== undefined
-            && $scope.boton[6] !== undefined
-            && $scope.boton[7] !== undefined
-            && $scope.boton[8] !== undefined
-            &&$scope.boton[9] !== undefined)
+         else {
+           if($scope.sum >= 72 && $scope.solounganador == false) {
             $scope.resultado = false;
-          else{
-          for (i=0; i<soluciones.length; i++) {
-            var solucion = soluciones[i];
-            if ($scope.boton[ solucion[0] ] === $scope.boton[ solucion[1] ] &&
-                $scope.boton[ solucion[0] ] === $scope.boton[ solucion[2] ] &&
-                $scope.boton[ solucion[0] ] !== undefined) {
-                $scope.gano( $scope.boton[solucion[0]] );
-                $scope.solounganador = true;
-              }
-            }
           }
+         }
         }
+       }
       },
+
       controllerAs: 'change'
-    };
+ };
 
 });
+
+/* TESTS
+
+soluciones.forEach(function(solucion) {
+  if ($scope.boton[ solucion[0] ] === $scope.boton[ solucion[1] ] &&
+      $scope.boton[ solucion[0] ] === $scope.boton[ solucion[2] ] &&
+      $scope.boton[ solucion[0] ] !== undefined) {
+      $scope.gano( $scope.boton[solucion[0]] );
+  }
+});
+
+
+ $scope.filter = $scope.notchange.slice(0,3);
+-----------------------------------------------------------------------
+   if($scope.boton[1] !== undefined
+   && $scope.boton[2] !== undefined
+   && $scope.boton[3] !== undefined
+   && $scope.boton[4] !== undefined
+   && $scope.boton[5] !== undefined
+   && $scope.boton[6] !== undefined
+   && $scope.boton[7] !== undefined
+   && $scope.boton[8] !== undefined
+   && $scope.boton[9] !== undefined
+   && $scope.cuenta >)
+   $scope.resultado = false;
+*/
