@@ -13,6 +13,7 @@ app.directive('buttonCalls', function(){
         $scope.boton = [];
         $scope.notchange = [1,2,3,4,5,6,7,8,9];
         $scope.solounganador = false;
+        $scope.resultado = true;
 
         $scope.hacerTodo = function(sorete) {
           $scope.doStuff(sorete);
@@ -56,6 +57,19 @@ app.directive('buttonCalls', function(){
           });
           */
 
+          // $scope.filter = $scope.notchange.slice(0,3);
+
+            if($scope.boton[1] !== undefined
+            && $scope.boton[2] !== undefined
+            && $scope.boton[3] !== undefined
+            && $scope.boton[4] !== undefined
+            && $scope.boton[5] !== undefined
+            && $scope.boton[6] !== undefined
+            && $scope.boton[7] !== undefined
+            && $scope.boton[8] !== undefined
+            &&$scope.boton[9] !== undefined)
+            $scope.resultado = false;
+          else{
           for (i=0; i<soluciones.length; i++) {
             var solucion = soluciones[i];
             if ($scope.boton[ solucion[0] ] === $scope.boton[ solucion[1] ] &&
@@ -63,9 +77,9 @@ app.directive('buttonCalls', function(){
                 $scope.boton[ solucion[0] ] !== undefined) {
                 $scope.gano( $scope.boton[solucion[0]] );
                 $scope.solounganador = true;
+              }
             }
           }
-
         }
       },
       controllerAs: 'change'

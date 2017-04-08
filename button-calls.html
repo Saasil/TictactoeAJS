@@ -15,7 +15,7 @@
   </div>
   <div>
     <a href="index.html" ng-class="'direction'">
-      <div ng-class="'reset'">Ganador
+      <div ng-class="'reset'">{{resultado == true ? 'Ganador' : 'Empate'}}
         <span ng-class="{'estiloX' : ganador=='X', 'estiloO' : ganador=='O'}">
           <span style="font-style:normal">{{ganador}}</span>
         </span>
