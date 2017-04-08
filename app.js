@@ -8,13 +8,17 @@ app.directive('buttonCalls', function(){
       restrict: 'E',
       templateUrl: 'button-calls.html',
       controller: function($scope) {
+
         $scope.player = "X";
         $scope.boton = [];
+        $scope.notchange = [1,2,3,4,5,6,7,8,9];
 
         $scope.hacerTodo = function(sorete) {
           $scope.doStuff(sorete);
-          $scope.exchange();
-          $scope.verify();
+          if($scope.notchange[$scope.value] != false) {
+            $scope.exchange();
+            $scope.verify();
+            }
         }
 
         $scope.doStuff = function (item) {
@@ -24,10 +28,12 @@ app.directive('buttonCalls', function(){
         $scope.exchange = function() {
           $scope.boton[$scope.value] = $scope.player;
           $scope.player == 'X' ? $scope.player = 'O' : $scope.player = 'X';
+          $scope.notchange[$scope.value] = false;
         };
 
         $scope.gano = function(quien) {
-          alert("Gano " + quien);
+          //alert("Gano " + quien);
+          $scope.ganador = quien;
         }
 
         $scope.verify = function() {

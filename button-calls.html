@@ -1,15 +1,25 @@
-<div>
+<div ng-class="'back'">
   <!-- ng-style="{'color' : (change.boton[7]=='X') ? 'red' : 'blue' }"> -->
+  <!-- <div ng-class="{'isClicked1' : click, 'isClicked2' :!click}"> -->
   <div class="col1">
     <div ng-repeat="i in [1,2,3]" class="celda" value="{{i}}" ng-click="hacerTodo($event)"
-      ng-class="'{{ boton[i]=='X' ? 'estiloX' : 'estiloO'}}'"><p>{{boton[i]}}</p></div>
+      ng-class="{'estiloX' : boton[i]=='X', 'estiloO' : boton[i]=='O'}"><p>{{boton[i]}}</p></div>
   </div>
   <div class="col2">
     <div ng-repeat="i in [4,5,6]" class="celda" value="{{i}}" ng-click="hacerTodo($event)"
-    ng-class="'{{ boton[i]=='X' ? 'estiloX' : 'estiloO'}}'"><p>{{boton[i]}}</p></div>
+    ng-class="{'estiloX' : boton[i]=='X', 'estiloO' : boton[i]=='O'}"><p>{{boton[i]}}</p></div>
   </div>
   <div class="col3">
     <div ng-repeat="i in [7,8,9]" class="celda" value="{{i}}" ng-click="hacerTodo($event)"
-    ng-class="'{{ boton[i]=='X' ? 'estiloX' : 'estiloO'}}'"><p>{{boton[i]}}</p></div>
+    ng-class="{'estiloX' : boton[i]=='X', 'estiloO' : boton[i]=='O'}"><p>{{boton[i]}}</p></div>
+  </div>
+  <div>
+    <a href="index.html" ng-class="'direction'">
+      <div ng-class="'reset'">Ganador
+        <span ng-class="{'estiloX' : ganador=='X', 'estiloO' : ganador=='O'}">
+          <span style="font-style:normal">{{ganador}}</span>
+        </span>
+      </div>
+    </a>
   </div>
 </div>
