@@ -1,6 +1,6 @@
 var app;
 
-app = angular.module('tictac',['ngRoute']);
+app = angular.module('tictac',[]);
 
 app.directive('buttonCalls', function(){
 
@@ -9,16 +9,7 @@ app.directive('buttonCalls', function(){
       templateUrl: 'button-calls.html',
       controller: function($scope) {
 
-      /*  $scope.player = "X";
-        $scope.boton = [];
-        $scope.notchange = [1,2,3,4,5,6,7,8,9];
-        $scope.solounganador = false;
-        $scope.resultado = true;
-        $scope.sum = 0; */
-
         $scope.inicio = function() {
-
-          //$window.location.reload();
 
           $scope.player = "X";
           $scope.solounganador = false;
@@ -27,7 +18,8 @@ app.directive('buttonCalls', function(){
           $scope.ganador = undefined;
           $scope.ganadortitle = undefined;
           $scope.boton = [];
-          $scope.notchange = true;
+          $scope.notchange = [1,2,3,4,5,6,7,8,9]
+
           };
 
         $scope.hacerTodo = function(sorete) {
@@ -53,7 +45,6 @@ app.directive('buttonCalls', function(){
         };
 
         $scope.gano = function(quien) {
-          //alert("Gano " + quien);
           $scope.ganador = quien;
         }
 
@@ -90,29 +81,3 @@ app.directive('buttonCalls', function(){
  };
 
 });
-
-/* TESTS
-
-soluciones.forEach(function(solucion) {
-  if ($scope.boton[ solucion[0] ] === $scope.boton[ solucion[1] ] &&
-      $scope.boton[ solucion[0] ] === $scope.boton[ solucion[2] ] &&
-      $scope.boton[ solucion[0] ] !== undefined) {
-      $scope.gano( $scope.boton[solucion[0]] );
-  }
-});
-
-
- $scope.filter = $scope.notchange.slice(0,3);
------------------------------------------------------------------------
-   if($scope.boton[1] !== undefined
-   && $scope.boton[2] !== undefined
-   && $scope.boton[3] !== undefined
-   && $scope.boton[4] !== undefined
-   && $scope.boton[5] !== undefined
-   && $scope.boton[6] !== undefined
-   && $scope.boton[7] !== undefined
-   && $scope.boton[8] !== undefined
-   && $scope.boton[9] !== undefined
-   && $scope.cuenta >)
-   $scope.resultado = false;
-*/
