@@ -15,8 +15,8 @@ app.directive('buttonCalls', function(){
           $scope.solounganador = false;
           $scope.resultado = true;
           $scope.sum = 0;
-          $scope.ganador = undefined;
-          $scope.ganadortitle = undefined;
+          $scope.ganador = null;
+          $scope.ganadortitle = null;
           $scope.boton = [];
           $scope.notchange = [1,2,3,4,5,6,7,8,9]
 
