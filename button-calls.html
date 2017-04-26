@@ -1,4 +1,4 @@
-<div ng-class="'back'">
+<div ng-class="'back'" ng-init="inicio()">
   <!-- ng-style="{'color' : (change.boton[7]=='X') ? 'red' : 'blue' }"> -->
   <!-- <div ng-class="{'isClicked1' : click, 'isClicked2' :!click}"> -->
   <div class="col1">
@@ -14,7 +14,7 @@
     ng-class="{'estiloX' : boton[i]=='X', 'estiloO' : boton[i]=='O'}"><p>{{boton[i]}}</p></div>
   </div>
   <div>
-    <button ng-click="reset()">sorete</button>
+    <button ng-click="inicio()">sorete</button>
       <div ng-class="'reset'">{{resultado == true ? '' : 'Empate'}}
         <span ng-class="{'estiloX' : ganador=='X', 'estiloO' : ganador=='O'}">
           <span style="font-style:normal">

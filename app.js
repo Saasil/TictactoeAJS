@@ -9,14 +9,14 @@ app.directive('buttonCalls', function(){
       templateUrl: 'button-calls.html',
       controller: function($scope) {
 
-        $scope.player = "X";
+      /*  $scope.player = "X";
         $scope.boton = [];
         $scope.notchange = [1,2,3,4,5,6,7,8,9];
         $scope.solounganador = false;
         $scope.resultado = true;
-        $scope.sum = 0;
+        $scope.sum = 0; */
 
-        $scope.reset = function() {
+        $scope.inicio = function() {
 
           //$window.location.reload();
 
