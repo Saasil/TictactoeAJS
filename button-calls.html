@@ -14,12 +14,15 @@
     ng-class="{'estiloX' : boton[i]=='X', 'estiloO' : boton[i]=='O'}"><p>{{boton[i]}}</p></div>
   </div>
   <div>
-    <a href="index.html" ng-class="'direction'">
-      <div ng-class="'reset'">{{resultado == true ? 'Ganador' : 'Empate'}}
+    <button ng-click="reset()">sorete</button>
+      <div ng-class="'reset'">{{resultado == true ? '' : 'Empate'}}
         <span ng-class="{'estiloX' : ganador=='X', 'estiloO' : ganador=='O'}">
-          <span style="font-style:normal">{{ganador}}</span>
+          <span style="font-style:normal">
+            <span ng-class="'reset'">{{ganadortitle}}</span>
+            {{ganador}}
+          </span>
         </span>
       </div>
-    </a>
+    <
   </div>
 </div>

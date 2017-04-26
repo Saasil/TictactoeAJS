@@ -1,6 +1,6 @@
 var app;
 
-app = angular.module('tictac',[]);
+app = angular.module('tictac',['ngRoute']);
 
 app.directive('buttonCalls', function(){
 
@@ -15,6 +15,20 @@ app.directive('buttonCalls', function(){
         $scope.solounganador = false;
         $scope.resultado = true;
         $scope.sum = 0;
+
+        $scope.reset = function() {
+
+          //$window.location.reload();
+
+          $scope.player = "X";
+          $scope.solounganador = false;
+          $scope.resultado = true;
+          $scope.sum = 0;
+          $scope.ganador = undefined;
+          $scope.ganadortitle = undefined;
+          $scope.boton = [];
+          $scope.notchange = true;
+          };
 
         $scope.hacerTodo = function(sorete) {
 
@@ -61,6 +75,7 @@ app.directive('buttonCalls', function(){
              $scope.boton[ solucion[0] ] !== undefined) {
              $scope.gano( $scope.boton[solucion[0]] );
              $scope.solounganador = true;
+             $scope.ganadortitle = "Ganador ";
             }
          else {
            if($scope.sum >= 72 && $scope.solounganador == false) {
